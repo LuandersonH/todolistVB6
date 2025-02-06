@@ -1,7 +1,0 @@
-[History]
-1=#P0#=mb	#P1#=btnClearAll_Click	#P2#=Project1/frmTodolist/btnClearAll_Click	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250202072504	#P7#=0	#P8#=4	.
-2=#P0#=mb	#P1#=btnFinishedTask_Click	#P2#=Project1/frmTodolist/btnFinishedTask_Click	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250202073659	#P7#=0	#P8#=2	.
-3=#P0#=mb	#P1#=btnDeleteTask_Click	#P2#=Project1/frmTodolist/btnDeleteTask_Click	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250202073607	#P7#=0	#P8#=8	.
-4=#P0#=mb	#P1#=btnInsertTask_Click	#P2#=Project1/frmTodolist/btnInsertTask_Click	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250202064627	#P7#=0	#P8#=3	.
-5=#P0#=mb	#P1#=tboxInsertTask_Change	#P2#=Project1/frmTodolist/tboxInsertTask_Change	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20250202051637	#P7#=0	#P8#=1	.
-6=#P0#=mb	#P1#=Form_Load	#P2#=Project1/frmTodolist/Form_Load	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20250202073110	#P7#=0	#P8#=1	.

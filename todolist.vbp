@@ -1,7 +1,9 @@
 Type=Exe
-Form=todolist.frm
 Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\Windows\SysWOW64\stdole2.tlb#OLE Automation
-Startup="frmTodolist"
+Object={BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0; TabCtl32.Ocx
+Form=Form1.frm
+Startup="Form1"
+HelpFile=""
 ExeName32="todolist.exe"
 Command32=""
 Name="Project1"
