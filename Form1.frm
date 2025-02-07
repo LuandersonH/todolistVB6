@@ -54,7 +54,7 @@ Begin VB.Form ConsultableToDoList
       Tab(0).Control(6)=   "btnClearAll"
       Tab(0).Control(6).Enabled=   0   'False
       Tab(0).ControlCount=   7
-      TabCaption(1)   =   "Histórico"
+      TabCaption(1)   =   "Histï¿½rico"
       TabPicture(1)   =   "Form1.frx":001C
       Tab(1).ControlEnabled=   0   'False
       Tab(1).Control(0)=   "inputHistoryFilter"
@@ -141,7 +141,7 @@ Begin VB.Form ConsultableToDoList
       Begin VB.CommandButton btnFinishedTask 
          Appearance      =   0  'Flat
          BackColor       =   &H0080FF80&
-         Caption         =   "CONCLUÍDA"
+         Caption         =   "CONCLUï¿½DA"
          BeginProperty Font 
             Name            =   "Bell MT"
             Size            =   12
@@ -292,23 +292,14 @@ Call InitConexao
 End Sub
 
 Private Sub btnInsertTask_Click()
-If tboxInsertTask.Text <> "" Then
-handleTaskValue = tboxInsertTask.Text
-listTasks.AddItem handleTaskValue
-tboxInsertTask.Text = ""
-
-
-
-Else
-MsgBox "Crie uma tarefa antes de adicionar a lista!", vbExclamation, "Aviso"
-End If
+Call addTasks(Me)
 End Sub
 
 Private Sub btnFinishedTask_Click()
 If listTasks.ListIndex <> -1 Then
 listTasks.List(listTasks.ListIndex) = "[CHECK!] " & listTasks.List(listTasks.ListIndex)
 Else
-MsgBox "Selecione uma tarefa a ser concluída!", vbExclamation, "Aviso"
+MsgBox "Selecione uma tarefa a ser concluï¿½da!", vbExclamation, "Aviso"
 End If
 End Sub
 
@@ -321,7 +312,7 @@ End If
 End Sub
 
 Private Sub btnClearAll_Click()
-resposta = MsgBox("Isso apagará TODAS AS TAREFAS e não poderá ser desfeito, deseja continuar?", vbOKCancel, "Apagar todas as tarefas")
+resposta = MsgBox("Isso apagarï¿½ TODAS AS TAREFAS e nï¿½o poderï¿½ ser desfeito, deseja continuar?", vbOKCancel, "Apagar todas as tarefas")
 If resposta = vbOK Then
 listTasks.Clear
 End If

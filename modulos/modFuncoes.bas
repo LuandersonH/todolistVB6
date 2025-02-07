@@ -2,7 +2,7 @@ Attribute VB_Name = "modFuncoes"
 Public Function ConsultarTasks(frm As Object)
     Dim queryInputHistory As String
 
-    ' Verifica se o campo de pesquisa está preenchido
+    ' Verifica se o campo de pesquisa estï¿½ preenchido
     If frm.inputHistoryFilter.Text = "" Then
         MsgBox "Preencha o campo de pesquisa antes de consultar!", vbExclamation, "Aviso"
         Exit Function
@@ -28,3 +28,21 @@ Public Function ConsultarTasks(frm As Object)
     recordBD.Close
 End Function
 
+Public Function addTasks(frm as Object)
+    If listTasks.ListIndex <> -1 Then
+        tarefaClicadaDesc = listTasks.List(listTasks.ListIndex)
+        tarefaClicadaDesc = "[CHECK!] " & tarefaClicadaDesc
+        INSERT INTO Tasks (descricao, status) VALUES ("'" & tarefaClicadaDesc & "'", "CONCLUIDA")
+    Else
+        MsgBox "Selecione uma tarefa a ser concluï¿½da!", vbExclamation, "Aviso"
+    End If
+End Function
+
+//A FAZER
+Private Sub btnDeleteTask_Click()
+If listTasks.ListIndex <> -1 Then
+listTasks.RemoveItem listTasks.ListIndex
+Else
+MsgBox "Selecione uma tarefa a ser removida!", vbExclamation, "Aviso"
+End If
+End Sub
