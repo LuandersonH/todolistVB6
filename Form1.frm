@@ -1,10 +1,12 @@
 VERSION 5.00
 Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TabCtl32.Ocx"
-Begin VB.Form Form1 
-   Caption         =   "Form1"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFlxGrd.ocx"
+Begin VB.Form ConsultableToDoList 
+   BorderStyle     =   1  'Fixed Single
+   Caption         =   "TodoList"
    ClientHeight    =   8535
-   ClientLeft      =   60
-   ClientTop       =   405
+   ClientLeft      =   45
+   ClientTop       =   390
    ClientWidth     =   14880
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -16,17 +18,17 @@ Begin VB.Form Form1
       Strikethrough   =   0   'False
    EndProperty
    LinkTopic       =   "Form1"
+   MaxButton       =   0   'False
    ScaleHeight     =   8535
    ScaleWidth      =   14880
-   ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
    Begin TabDlg.SSTab sstabToDoList 
       Height          =   9045
-      Left            =   -75
+      Left            =   -60
       TabIndex        =   0
-      Top             =   0
-      Width           =   15030
-      _ExtentX        =   26511
+      Top             =   -30
+      Width           =   15000
+      _ExtentX        =   26458
       _ExtentY        =   15954
       _Version        =   393216
       Tabs            =   2
@@ -34,7 +36,7 @@ Begin VB.Form Form1
       TabHeight       =   520
       TabMaxWidth     =   5292
       BackColor       =   8421440
-      TabCaption(0)   =   "ToDoList"
+      TabCaption(0)   =   "Lista de tarefas"
       TabPicture(0)   =   "Form1.frx":0000
       Tab(0).ControlEnabled=   -1  'True
       Tab(0).Control(0)=   "lblTodolist"
@@ -55,7 +57,67 @@ Begin VB.Form Form1
       TabCaption(1)   =   "Histórico"
       TabPicture(1)   =   "Form1.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).ControlCount=   0
+      Tab(1).Control(0)=   "inputHistoryFilter"
+      Tab(1).Control(1)=   "btnConsultar"
+      Tab(1).Control(2)=   "GridHistorico"
+      Tab(1).Control(3)=   "lblHistoryInput"
+      Tab(1).ControlCount=   4
+      Begin VB.TextBox inputHistoryFilter 
+         BackColor       =   &H00C0C0C0&
+         BeginProperty Font 
+            Name            =   "Bell MT"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   780
+         Left            =   -74865
+         MaxLength       =   40
+         MultiLine       =   -1  'True
+         TabIndex        =   10
+         Top             =   900
+         Width           =   13005
+      End
+      Begin VB.CommandButton btnConsultar 
+         Appearance      =   0  'Flat
+         BackColor       =   &H0080FF80&
+         Caption         =   "CONSULTAR"
+         BeginProperty Font 
+            Name            =   "Bell MT"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   -1  'True
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   810
+         Left            =   -61830
+         Style           =   1  'Graphical
+         TabIndex        =   9
+         Top             =   825
+         Width           =   1725
+      End
+      Begin MSFlexGridLib.MSFlexGrid GridHistorico 
+         Height          =   6930
+         Left            =   -75000
+         TabIndex        =   8
+         Top             =   1770
+         Width           =   15000
+         _ExtentX        =   26458
+         _ExtentY        =   12224
+         _Version        =   393216
+         Rows            =   5
+         Cols            =   3
+         RowHeightMin    =   500
+         WordWrap        =   -1  'True
+         GridLinesFixed  =   1
+         SelectionMode   =   1
+         AllowUserResizing=   1
+      End
       Begin VB.CommandButton btnClearAll 
          Appearance      =   0  'Flat
          BackColor       =   &H000000FF&
@@ -148,12 +210,12 @@ Begin VB.Form Form1
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   1110
+         Height          =   1065
          Left            =   2955
          MaxLength       =   40
          MultiLine       =   -1  'True
          TabIndex        =   2
-         Top             =   1875
+         Top             =   1920
          Width           =   8080
       End
       Begin VB.ListBox listTasks 
@@ -174,6 +236,25 @@ Begin VB.Form Form1
          TabIndex        =   1
          Top             =   4245
          Width           =   8080
+      End
+      Begin VB.Label lblHistoryInput 
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Pesquise por tarefas"
+         BeginProperty Font 
+            Name            =   "Tahoma"
+            Size            =   14.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   345
+         Left            =   -74805
+         TabIndex        =   11
+         Top             =   480
+         Width           =   3135
       End
       Begin VB.Label lblTodolist 
          AutoSize        =   -1  'True
@@ -197,21 +278,17 @@ Begin VB.Form Form1
       End
    End
 End
-Attribute VB_Name = "Form1"
+Attribute VB_Name = "ConsultableToDoList"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim handleTaskValue As String
 
-
-Private Sub tabToDoList_DblClick()
-
-Private Sub btnClearAll_Click()
-resposta = MsgBox("Isso apagará TODAS AS TAREFAS e não poderá ser desfeito, deseja continuar?", vbOKCancel, "Apagar todas as tarefas")
-If resposta = vbOK Then
-listTasks.Clear
-End If
+'TODOLIST
+'TODOLIST
+Private Sub Form_Load()
+Call InitConexao
 End Sub
 
 Private Sub btnInsertTask_Click()
@@ -219,16 +296,11 @@ If tboxInsertTask.Text <> "" Then
 handleTaskValue = tboxInsertTask.Text
 listTasks.AddItem handleTaskValue
 tboxInsertTask.Text = ""
+
+
+
 Else
 MsgBox "Crie uma tarefa antes de adicionar a lista!", vbExclamation, "Aviso"
-End If
-End Sub
-
-Private Sub btnDeleteTask_Click()
-If listTasks.ListIndex <> -1 Then
-listTasks.RemoveItem listTasks.ListIndex
-Else
-MsgBox "Selecione uma tarefa a ser removida!", vbExclamation, "Aviso"
 End If
 End Sub
 
@@ -240,3 +312,47 @@ MsgBox "Selecione uma tarefa a ser concluída!", vbExclamation, "Aviso"
 End If
 End Sub
 
+Private Sub btnDeleteTask_Click()
+If listTasks.ListIndex <> -1 Then
+listTasks.RemoveItem listTasks.ListIndex
+Else
+MsgBox "Selecione uma tarefa a ser removida!", vbExclamation, "Aviso"
+End If
+End Sub
+
+Private Sub btnClearAll_Click()
+resposta = MsgBox("Isso apagará TODAS AS TAREFAS e não poderá ser desfeito, deseja continuar?", vbOKCancel, "Apagar todas as tarefas")
+If resposta = vbOK Then
+listTasks.Clear
+End If
+End Sub
+
+
+
+
+'HISTORICO
+'HISTORICO
+Private Sub Form_Resize()
+      With GridHistorico
+       
+       .TextMatrix(0, 0) = "Tarefa"
+       .TextMatrix(0, 2) = "Status"
+      
+      .colWidth(0) = 10000
+      .colWidth(1) = 15000
+
+    End With
+End Sub
+
+Private Sub btnConsultar_Click()
+Dim valueInputHistory As String
+Dim sqlInputHistory As String
+
+MsgBox "consultado"
+If Me.inputHistoryFilter.Text <> "" Then
+valueInputHistory = Me.inputHistoryFilter.Text
+sqlInputHistory = "SELECT * from tabela WHERE Descricao ='" & valueInputHistory & "'"
+Me.inputHistoryFilter.Text = ""
+
+End If
+End Sub
