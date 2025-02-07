@@ -345,14 +345,6 @@ Private Sub Form_Resize()
 End Sub
 
 Private Sub btnConsultar_Click()
-Dim valueInputHistory As String
-Dim sqlInputHistory As String
+Call consultarTasks(Me)
 
-MsgBox "consultado"
-If Me.inputHistoryFilter.Text <> "" Then
-valueInputHistory = Me.inputHistoryFilter.Text
-sqlInputHistory = "SELECT * from tabela WHERE Descricao ='" & valueInputHistory & "'"
-Me.inputHistoryFilter.Text = ""
-
-End If
 End Sub

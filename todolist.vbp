@@ -14,6 +14,7 @@ Object={CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0; MSDatGrd.ocx
 Object={F0D2F211-CCB0-11D0-A316-00AA00688B10}#1.0#0; MSDatLst.Ocx
 Form=Form1.frm
 Module=modConectarBD; modulos\modConectarBD.bas
+Module=modFuncoes; modulos\modFuncoes.bas
 Startup="ConsultableToDoList"
 HelpFile=""
 ExeName32="todolist.exe"
