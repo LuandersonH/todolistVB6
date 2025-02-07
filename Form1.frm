@@ -337,5 +337,4 @@ End Sub
 
 Private Sub btnConsultar_Click()
 Call consultarTasks(Me)
-
 End Sub
