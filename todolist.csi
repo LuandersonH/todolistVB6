@@ -1,10 +1,16 @@
 [History]
-1=#P0#=mb	#P1#=consultarTasks	#P2#=Project1/modFuncoes/consultarTasks	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250207134448	#P7#=0	#P8#=0	.
-2=#P0#=mb	#P1#=InitConexao	#P2#=Project1/modConectarBD/InitConexao	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250207133951	#P7#=0	#P8#=9	.
-3=#P0#=mb	#P1#=btnConsultar_Click	#P2#=Project1/ConsultableToDoList/btnConsultar_Click	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250207132731	#P7#=0	#P8#=1	.
-4=#P0#=mb	#P1#=Form_Load	#P2#=Project1/ConsultableToDoList/Form_Load	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20250207010104	#P7#=0	#P8#=1	.
-5=#P0#=mb	#P1#=btnInsertTask_Click	#P2#=Project1/ConsultableToDoList/btnInsertTask_Click	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20250206231633	#P7#=0	#P8#=1	.
-6=#P0#=mb	#P1#=Form_Resize	#P2#=Project1/ConsultableToDoList/Form_Resize	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20250206222113	#P7#=0	#P8#=0	.
-7=#P0#=mb	#P1#=btnClearAll_Click	#P2#=Project1/ConsultableToDoList/btnClearAll_Click	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20250206222101	#P7#=0	#P8#=-1	.
-8=#P0#=mb	#P1#=btnFinishedTask_Click	#P2#=Project1/ConsultableToDoList/btnFinishedTask_Click	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20250206222053	#P7#=0	#P8#=-1	.
-9=#P0#=mb	#P1#=btnDeleteTask_Click	#P2#=Project1/ConsultableToDoList/btnDeleteTask_Click	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20250206222042	#P7#=0	#P8#=-1	.
+1=#P0#=mb	#P1#=historicoConsultarTasks	#P2#=Project1/modFuncoes/historicoConsultarTasks	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250210001230	#P7#=0	#P8#=9	.
+2=#P0#=mb	#P1#=reloadListTasks	#P2#=Project1/modFuncoes/reloadListTasks	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250209214247	#P7#=0	#P8#=0	.
+3=#P0#=mb	#P1#=Form_Resize	#P2#=Project1/ConsultableToDoList/Form_Resize	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20250209215806	#P7#=0	#P8#=9	.
+4=#P0#=mb	#P1#=deleteAllTasks	#P2#=Project1/modFuncoes/deleteAllTasks	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250209224322	#P7#=0	#P8#=2	.
+5=#P0#=mb	#P1#=btnClearAll_Click	#P2#=Project1/ConsultableToDoList/btnClearAll_Click	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20250209202443	#P7#=0	#P8#=-1	.
+6=#P0#=mb	#P1#=deleteTasks	#P2#=Project1/modFuncoes/deleteTasks	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250209202015	#P7#=0	#P8#=21	.
+7=#P0#=mb	#P1#=btnDeleteTask_Click	#P2#=Project1/ConsultableToDoList/btnDeleteTask_Click	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20250209200728	#P7#=0	#P8#=2	.
+8=#P0#=mb	#P1#=addTasks	#P2#=Project1/modFuncoes/addTasks	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250209183831	#P7#=0	#P8#=31	.
+9=#P0#=mb	#P1#=endTasks	#P2#=Project1/modFuncoes/endTasks	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250209183500	#P7#=0	#P8#=12	.
+10=#P0#=mb	#P1#=consultarTasks	#P2#=Project1/modFuncoes/consultarTasks	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250209183443	#P7#=0	#P8#=24	.
+11=#P0#=mb	#P1#=btnInsertTask_Click	#P2#=Project1/ConsultableToDoList/btnInsertTask_Click	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20250209183129	#P7#=0	#P8#=1	.
+12=#P0#=mb	#P1#=InitConexao	#P2#=Project1/modConectarBD/InitConexao	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250209182510	#P7#=0	#P8#=15	.
+13=#P0#=mb	#P1#=btnConsultar_Click	#P2#=Project1/ConsultableToDoList/btnConsultar_Click	#P3#=	#P4#=	#P5#=MembMethodPublic	#P6#=20250209224427	#P7#=0	#P8#=-1	.
+14=#P0#=mb	#P1#=btnFinishedTask_Click	#P2#=Project1/ConsultableToDoList/btnFinishedTask_Click	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20250209182306	#P7#=0	#P8#=1	.
+15=#P0#=mb	#P1#=Form_Load	#P2#=Project1/ConsultableToDoList/Form_Load	#P3#=	#P4#=	#P5#=MembEventProcPrivate	#P6#=20250209182232	#P7#=0	#P8#=2	.

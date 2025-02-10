@@ -24,9 +24,9 @@ Begin VB.Form ConsultableToDoList
    StartUpPosition =   3  'Windows Default
    Begin TabDlg.SSTab sstabToDoList 
       Height          =   9045
-      Left            =   -60
+      Left            =   -75
       TabIndex        =   0
-      Top             =   -30
+      Top             =   -75
       Width           =   15000
       _ExtentX        =   26458
       _ExtentY        =   15954
@@ -35,7 +35,7 @@ Begin VB.Form ConsultableToDoList
       TabsPerRow      =   2
       TabHeight       =   520
       TabMaxWidth     =   5292
-      BackColor       =   8421440
+      BackColor       =   8388608
       TabCaption(0)   =   "Lista de tarefas"
       TabPicture(0)   =   "Form1.frx":0000
       Tab(0).ControlEnabled=   -1  'True
@@ -54,13 +54,17 @@ Begin VB.Form ConsultableToDoList
       Tab(0).Control(6)=   "btnClearAll"
       Tab(0).Control(6).Enabled=   0   'False
       Tab(0).ControlCount=   7
-      TabCaption(1)   =   "Histï¿½rico"
+      TabCaption(1)   =   "Histórico"
       TabPicture(1)   =   "Form1.frx":001C
       Tab(1).ControlEnabled=   0   'False
-      Tab(1).Control(0)=   "inputHistoryFilter"
-      Tab(1).Control(1)=   "btnConsultar"
-      Tab(1).Control(2)=   "GridHistorico"
-      Tab(1).Control(3)=   "lblHistoryInput"
+      Tab(1).Control(0)=   "lblHistoryInput"
+      Tab(1).Control(0).Enabled=   0   'False
+      Tab(1).Control(1)=   "GridHistorico"
+      Tab(1).Control(1).Enabled=   0   'False
+      Tab(1).Control(2)=   "btnConsultar"
+      Tab(1).Control(2).Enabled=   0   'False
+      Tab(1).Control(3)=   "inputHistoryFilter"
+      Tab(1).Control(3).Enabled=   0   'False
       Tab(1).ControlCount=   4
       Begin VB.TextBox inputHistoryFilter 
          BackColor       =   &H00C0C0C0&
@@ -95,23 +99,22 @@ Begin VB.Form ConsultableToDoList
             Strikethrough   =   0   'False
          EndProperty
          Height          =   810
-         Left            =   -61830
+         Left            =   -61815
          Style           =   1  'Graphical
          TabIndex        =   9
-         Top             =   825
+         Top             =   885
          Width           =   1725
       End
       Begin MSFlexGridLib.MSFlexGrid GridHistorico 
          Height          =   6930
-         Left            =   -75000
+         Left            =   -74900
          TabIndex        =   8
          Top             =   1770
-         Width           =   15000
-         _ExtentX        =   26458
+         Width           =   14900
+         _ExtentX        =   26273
          _ExtentY        =   12224
          _Version        =   393216
-         Rows            =   5
-         Cols            =   3
+         Rows            =   1
          RowHeightMin    =   500
          WordWrap        =   -1  'True
          GridLinesFixed  =   1
@@ -119,29 +122,27 @@ Begin VB.Form ConsultableToDoList
          AllowUserResizing=   1
       End
       Begin VB.CommandButton btnClearAll 
-         Appearance      =   0  'Flat
          BackColor       =   &H000000FF&
-         Caption         =   "LIMPAR TUDO"
+         Caption         =   "EXCLUIR TUDO"
          BeginProperty Font 
             Name            =   "Bell MT"
-            Size            =   12
+            Size            =   14.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   735
-         Left            =   11085
+         Height          =   825
+         Left            =   11055
          Style           =   1  'Graphical
          TabIndex        =   6
-         Top             =   6795
+         Top             =   6705
          Width           =   1725
       End
       Begin VB.CommandButton btnFinishedTask 
-         Appearance      =   0  'Flat
          BackColor       =   &H0080FF80&
-         Caption         =   "CONCLUï¿½DA"
+         Caption         =   "CONCLUIR"
          BeginProperty Font 
             Name            =   "Bell MT"
             Size            =   12
@@ -159,7 +160,6 @@ Begin VB.Form ConsultableToDoList
          Width           =   1725
       End
       Begin VB.CommandButton btnDeleteTask 
-         Appearance      =   0  'Flat
          BackColor       =   &H008080FF&
          Caption         =   "EXCLUIR"
          BeginProperty Font 
@@ -171,15 +171,14 @@ Begin VB.Form ConsultableToDoList
             Italic          =   -1  'True
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   1245
-         Left            =   11085
+         Height          =   1095
+         Left            =   11070
          Style           =   1  'Graphical
          TabIndex        =   4
-         Top             =   5505
+         Top             =   5520
          Width           =   1725
       End
       Begin VB.CommandButton btnInsertTask 
-         Appearance      =   0  'Flat
          BackColor       =   &H0080C0FF&
          Caption         =   "ADICIONAR"
          BeginProperty Font 
@@ -200,7 +199,6 @@ Begin VB.Form ConsultableToDoList
       End
       Begin VB.TextBox tboxInsertTask 
          BackColor       =   &H00C0E0FF&
-         BorderStyle     =   0  'None
          BeginProperty Font 
             Name            =   "Bell MT"
             Size            =   12
@@ -211,11 +209,11 @@ Begin VB.Form ConsultableToDoList
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1065
-         Left            =   2955
+         Left            =   2925
          MaxLength       =   40
          MultiLine       =   -1  'True
          TabIndex        =   2
-         Top             =   1920
+         Top             =   1935
          Width           =   8080
       End
       Begin VB.ListBox listTasks 
@@ -231,7 +229,7 @@ Begin VB.Form ConsultableToDoList
          EndProperty
          Height          =   3300
          ItemData        =   "Form1.frx":0038
-         Left            =   2955
+         Left            =   2925
          List            =   "Form1.frx":003A
          TabIndex        =   1
          Top             =   4245
@@ -271,9 +269,9 @@ Begin VB.Form ConsultableToDoList
          EndProperty
          ForeColor       =   &H00404040&
          Height          =   810
-         Left            =   4380
+         Left            =   4245
          TabIndex        =   7
-         Top             =   780
+         Top             =   825
          Width           =   6810
       End
    End
@@ -288,37 +286,29 @@ Dim handleTaskValue As String
 'TODOLIST
 'TODOLIST
 Private Sub Form_Load()
-Call InitConexao
+     Call InitConexao
+     Call reloadListTasks(Me)
 End Sub
 
 Private Sub btnInsertTask_Click()
-Call addTasks(Me)
+     Call addTasks(Me)
 End Sub
 
 Private Sub btnFinishedTask_Click()
-If listTasks.ListIndex <> -1 Then
-listTasks.List(listTasks.ListIndex) = "[CHECK!] " & listTasks.List(listTasks.ListIndex)
-Else
-MsgBox "Selecione uma tarefa a ser concluï¿½da!", vbExclamation, "Aviso"
-End If
+     Call endTasks(Me)
 End Sub
 
 Private Sub btnDeleteTask_Click()
-If listTasks.ListIndex <> -1 Then
-listTasks.RemoveItem listTasks.ListIndex
-Else
-MsgBox "Selecione uma tarefa a ser removida!", vbExclamation, "Aviso"
-End If
+     Call deleteTasks(Me)
 End Sub
 
 Private Sub btnClearAll_Click()
-resposta = MsgBox("Isso apagarï¿½ TODAS AS TAREFAS e nï¿½o poderï¿½ ser desfeito, deseja continuar?", vbOKCancel, "Apagar todas as tarefas")
-If resposta = vbOK Then
-listTasks.Clear
-End If
+     resposta = MsgBox("Isso apagarï¿½ TODAS AS TAREFAS e nï¿½o poderï¿½ ser desfeito, deseja continuar?", vbExclamation, "Apagar todas as tarefas")
+     
+     If resposta = vbOK Then
+          Call deleteAllTasks(Me)
+     End If
 End Sub
-
-
 
 
 'HISTORICO
@@ -326,15 +316,15 @@ End Sub
 Private Sub Form_Resize()
       With GridHistorico
        
-       .TextMatrix(0, 0) = "Tarefa"
-       .TextMatrix(0, 2) = "Status"
+          .TextMatrix(0, 0) = "Tarefa"
+          .TextMatrix(0, 1) = "Status"
       
-      .colWidth(0) = 10000
-      .colWidth(1) = 15000
-
+          .colWidth(0) = 10000
+          .colWidth(1) = 15000
     End With
 End Sub
 
 Private Sub btnConsultar_Click()
-Call consultarTasks(Me)
+     Call historicoConsultarTasks(Me)
 End Sub
+
