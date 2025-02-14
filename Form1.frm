@@ -32,40 +32,32 @@ Begin VB.Form ConsultableToDoList
       _ExtentY        =   15954
       _Version        =   393216
       Tabs            =   2
+      Tab             =   1
       TabsPerRow      =   2
       TabHeight       =   520
       TabMaxWidth     =   5292
       BackColor       =   8388608
       TabCaption(0)   =   "Lista de tarefas"
       TabPicture(0)   =   "Form1.frx":0000
-      Tab(0).ControlEnabled=   -1  'True
+      Tab(0).ControlEnabled=   0   'False
       Tab(0).Control(0)=   "lblTodolist"
-      Tab(0).Control(0).Enabled=   0   'False
       Tab(0).Control(1)=   "listTasks"
-      Tab(0).Control(1).Enabled=   0   'False
       Tab(0).Control(2)=   "tboxInsertTask"
-      Tab(0).Control(2).Enabled=   0   'False
       Tab(0).Control(3)=   "btnInsertTask"
-      Tab(0).Control(3).Enabled=   0   'False
       Tab(0).Control(4)=   "btnDeleteTask"
-      Tab(0).Control(4).Enabled=   0   'False
       Tab(0).Control(5)=   "btnFinishedTask"
-      Tab(0).Control(5).Enabled=   0   'False
       Tab(0).Control(6)=   "btnClearAll"
-      Tab(0).Control(6).Enabled=   0   'False
       Tab(0).ControlCount=   7
       TabCaption(1)   =   "Histórico"
       TabPicture(1)   =   "Form1.frx":001C
-      Tab(1).ControlEnabled=   0   'False
+      Tab(1).ControlEnabled=   -1  'True
       Tab(1).Control(0)=   "lblHistoryInput"
       Tab(1).Control(0).Enabled=   0   'False
       Tab(1).Control(1)=   "GridHistorico"
       Tab(1).Control(1).Enabled=   0   'False
-      Tab(1).Control(2)=   "btnConsultar"
+      Tab(1).Control(2)=   "inputHistoryFilter"
       Tab(1).Control(2).Enabled=   0   'False
-      Tab(1).Control(3)=   "inputHistoryFilter"
-      Tab(1).Control(3).Enabled=   0   'False
-      Tab(1).ControlCount=   4
+      Tab(1).ControlCount=   3
       Begin VB.TextBox inputHistoryFilter 
          BackColor       =   &H00C0C0C0&
          BeginProperty Font 
@@ -78,36 +70,16 @@ Begin VB.Form ConsultableToDoList
             Strikethrough   =   0   'False
          EndProperty
          Height          =   780
-         Left            =   -74865
+         Left            =   135
          MaxLength       =   40
          MultiLine       =   -1  'True
-         TabIndex        =   10
-         Top             =   900
-         Width           =   13005
-      End
-      Begin VB.CommandButton btnConsultar 
-         Appearance      =   0  'Flat
-         BackColor       =   &H0080FF80&
-         Caption         =   "CONSULTAR"
-         BeginProperty Font 
-            Name            =   "Bell MT"
-            Size            =   12
-            Charset         =   0
-            Weight          =   700
-            Underline       =   0   'False
-            Italic          =   -1  'True
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   810
-         Left            =   -61815
-         Style           =   1  'Graphical
          TabIndex        =   9
-         Top             =   885
-         Width           =   1725
+         Top             =   900
+         Width           =   14775
       End
       Begin MSFlexGridLib.MSFlexGrid GridHistorico 
          Height          =   6930
-         Left            =   -74900
+         Left            =   100
          TabIndex        =   8
          Top             =   1770
          Width           =   14900
@@ -134,7 +106,7 @@ Begin VB.Form ConsultableToDoList
             Strikethrough   =   0   'False
          EndProperty
          Height          =   825
-         Left            =   11055
+         Left            =   -63945
          Style           =   1  'Graphical
          TabIndex        =   6
          Top             =   6705
@@ -153,7 +125,7 @@ Begin VB.Form ConsultableToDoList
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1245
-         Left            =   11100
+         Left            =   -63900
          Style           =   1  'Graphical
          TabIndex        =   5
          Top             =   4185
@@ -172,7 +144,7 @@ Begin VB.Form ConsultableToDoList
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1095
-         Left            =   11070
+         Left            =   -63930
          Style           =   1  'Graphical
          TabIndex        =   4
          Top             =   5520
@@ -191,7 +163,7 @@ Begin VB.Form ConsultableToDoList
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1110
-         Left            =   11055
+         Left            =   -63945
          Style           =   1  'Graphical
          TabIndex        =   3
          Top             =   1875
@@ -209,7 +181,7 @@ Begin VB.Form ConsultableToDoList
             Strikethrough   =   0   'False
          EndProperty
          Height          =   1065
-         Left            =   2925
+         Left            =   -72075
          MaxLength       =   40
          MultiLine       =   -1  'True
          TabIndex        =   2
@@ -229,7 +201,7 @@ Begin VB.Form ConsultableToDoList
          EndProperty
          Height          =   3300
          ItemData        =   "Form1.frx":0038
-         Left            =   2925
+         Left            =   -72075
          List            =   "Form1.frx":003A
          TabIndex        =   1
          Top             =   4245
@@ -238,7 +210,7 @@ Begin VB.Form ConsultableToDoList
       Begin VB.Label lblHistoryInput 
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
-         Caption         =   "Pesquise por tarefas"
+         Caption         =   "PESQUISE POR TAREFAS"
          BeginProperty Font 
             Name            =   "Tahoma"
             Size            =   14.25
@@ -249,10 +221,10 @@ Begin VB.Form ConsultableToDoList
             Strikethrough   =   0   'False
          EndProperty
          Height          =   345
-         Left            =   -74805
-         TabIndex        =   11
+         Left            =   5580
+         TabIndex        =   10
          Top             =   480
-         Width           =   3135
+         Width           =   3570
       End
       Begin VB.Label lblTodolist 
          AutoSize        =   -1  'True
@@ -269,7 +241,7 @@ Begin VB.Form ConsultableToDoList
          EndProperty
          ForeColor       =   &H00404040&
          Height          =   810
-         Left            =   4245
+         Left            =   -70755
          TabIndex        =   7
          Top             =   825
          Width           =   6810
@@ -288,6 +260,7 @@ Dim handleTaskValue As String
 Private Sub Form_Load()
      Call InitConexao
      Call reloadListTasks(Me)
+     Call historicoConsultarTasks(Me)
 End Sub
 
 Private Sub btnInsertTask_Click()
@@ -324,7 +297,6 @@ Private Sub Form_Resize()
     End With
 End Sub
 
-Private Sub btnConsultar_Click()
-     Call historicoConsultarTasks(Me)
+Private Sub inputHistoryFilter_Change()
+    Call historicoConsultarTasks(Me)
 End Sub
-
