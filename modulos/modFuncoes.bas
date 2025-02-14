@@ -169,10 +169,21 @@ End Function
 
 Public Function historicoConsultarTasks(frm As Object)
     Dim queryHistoricoConsultarTasks As String
-    queryHistoricoConsultarTasks = "SELECT * FROM Tasks WHERE Status IN ('Pendente', 'Concluida') ORDER BY Status, Descricao"
     Dim linhaGrid As Integer
+    Dim filtro As String
 
     On Error GoTo erroConsultarHistorico
+
+    filtro = Trim(frm.inputHistoryFilter.Text)
+
+     
+    If filtro = "" Then
+        'Se o input estiver vazio, carrega todas as tasks
+        queryHistoricoConsultarTasks = "SELECT * FROM Tasks WHERE Status IN ('Pendente', 'Concluida') ORDER BY Status, Descricao"
+    Else
+        'Se o input tiver algum caractere, faz a busca no BD
+        queryHistoricoConsultarTasks = "SELECT * FROM Tasks WHERE (Status IN ('Pendente', 'Concluida')) AND (Descricao LIKE '%" & filtro & "%') ORDER BY Status, Descricao"
+    End If
 
     If connectBD.State = adStateClosed Then connectBD.Open
 
@@ -186,17 +197,20 @@ Public Function historicoConsultarTasks(frm As Object)
 
     linhaGrid = 1
 
-        While Not recordBD.EOF
-            frm.GridHistorico.Rows = frm.GridHistorico.Rows + 1
-            frm.GridHistorico.TextMatrix(linhaGrid, 0) = recordBD.Fields("Descricao").Value
-            frm.GridHistorico.TextMatrix(linhaGrid, 1) = recordBD.Fields("Status").Value
+    While Not recordBD.EOF
+        frm.GridHistorico.Rows = frm.GridHistorico.Rows + 1
+        frm.GridHistorico.TextMatrix(linhaGrid, 0) = recordBD.Fields("Descricao").Value
+        frm.GridHistorico.TextMatrix(linhaGrid, 1) = recordBD.Fields("Status").Value
 
-            recordBD.MoveNext
-            linhaGrid = linhaGrid + 1
-        Wend
+        recordBD.MoveNext
+        linhaGrid = linhaGrid + 1
+    Wend
 
     recordBD.Close
     Exit Function
+
 erroConsultarHistorico:
-    MsgBox "Erro ao consultar as tarefas: " & Err.Number & " - " & Err.Description, vbCritical, "Erro"
+    MsgBox "Erro ao consultar histórico: " & Err.Number & " - " & Err.Description, vbCritical, "Erro"
 End Function
+
+
